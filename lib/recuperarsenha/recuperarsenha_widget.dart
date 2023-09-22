@@ -68,7 +68,7 @@ class _RecuperarsenhaWidgetState extends State<RecuperarsenhaWidget> {
                         size: 24.0,
                       ),
                       onPressed: () async {
-                        context.pushNamed('null');
+                        context.pushNamed('login2Copy');
                       },
                     ),
                   ),
@@ -121,7 +121,7 @@ class _RecuperarsenhaWidgetState extends State<RecuperarsenhaWidget> {
             ),
           ),
           Align(
-            alignment: AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.00, 1.00),
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(9.0, 15.0, 9.0, 9.0),
               child: Container(

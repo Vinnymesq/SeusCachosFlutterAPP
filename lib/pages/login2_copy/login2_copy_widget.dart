@@ -69,7 +69,7 @@ class _Login2CopyWidgetState extends State<Login2CopyWidget> {
               Expanded(
                 flex: 2,
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.00, 1.00),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 9.0),
                     child: Container(
@@ -150,7 +150,7 @@ class _Login2CopyWidgetState extends State<Login2CopyWidget> {
               Expanded(
                 flex: 2,
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.00, 1.00),
                   child: Container(
                     width: 350.0,
                     child: TextFormField(

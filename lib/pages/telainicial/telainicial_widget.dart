@@ -101,7 +101,7 @@ class _TelainicialWidgetState extends State<TelainicialWidget>
                 children: [
                   Expanded(
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.00, 0.00),
                       child: Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 8.0, 16.0),
@@ -138,13 +138,13 @@ class _TelainicialWidgetState extends State<TelainicialWidget>
                   ),
                   Expanded(
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.00, 0.00),
                       child: Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('null');
+                            context.pushNamed('login2Copy');
                           },
                           text: 'Minha Conta',
                           options: FFButtonOptions(

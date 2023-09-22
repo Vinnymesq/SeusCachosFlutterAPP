@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "238909373344",
+    "project_id": "seuscachos-f4d8f",
+    "storage_bucket": "seuscachos-f4d8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238909373344:android:96901be86a08c68b7582c5",
+        "android_client_info": {
+          "package_name": "com.mycompany.seuscachoss"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBhG2c8oKiGPxX8Ej0PUx6G-nYJXtfnuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
