@@ -1,8 +1,8 @@
 // Export pages
-export '/pages/telainicial/telainicial_widget.dart' show TelainicialWidget;
+export 'pages/login2_copy/telainicial/telainicial_widget.dart';
 export '/create2/create2_widget.dart' show Create2Widget;
 export '/recuperarsenha/recuperarsenha_widget.dart' show RecuperarsenhaWidget;
-export '/pages/login2_copy/login2_copy_widget.dart' show Login2CopyWidget;
+export 'pages/login2_copy/login2_copy_widget.dart' show Login2CopyWidget;
 export '/home/home_widget.dart' show HomeWidget;
 export '/cupons/cupons_widget.dart' show CuponsWidget;
 export '/perfil/perfil_widget.dart' show PerfilWidget;

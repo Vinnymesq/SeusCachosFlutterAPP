@@ -8,23 +8,25 @@ import 'package:provider/provider.dart';
 class Login2CopyModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+   final unfocusNode = FocusNode();
   // State field(s) for emailAddress widget.
   TextEditingController? emailAddressController;
   String? Function(BuildContext, String?)? emailAddressControllerValidator;
   // State field(s) for passwordLogin widget.
-  TextEditingController? passwordLoginController;
-  late bool passwordLoginVisibility;
+  TextEditingController? passwordController;
+  late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordLoginControllerValidator;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
-    passwordLoginVisibility = false;
+    passwordVisibility = false;
   }
 
   void dispose() {
+    unfocusNode.dispose();
     emailAddressController?.dispose();
-    passwordLoginController?.dispose();
+    passwordController?.dispose();
   }
 
   /// Action blocks are added here.

@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:seus_cachoss/backend/api_requests/api_service.dart';
+import 'package:http/http.dart' as http;
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -17,6 +21,7 @@ class Create2Widget extends StatefulWidget {
 class _Create2WidgetState extends State<Create2Widget> {
   late Create2Model _model;
 
+  final ApiService apiService = ApiService();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -26,7 +31,7 @@ class _Create2WidgetState extends State<Create2Widget> {
 
     _model.emailAddressController ??= TextEditingController();
     _model.passwordController ??= TextEditingController();
-    _model.confirmPasswordController ??= TextEditingController();
+    // _model.confirmPasswordController ??= TextEditingController();
   }
 
   @override
@@ -316,111 +321,161 @@ class _Create2WidgetState extends State<Create2Widget> {
                                   ),
                                 ),
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(0.00, 1.00),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 9.0),
-                                  child: Container(
-                                    width: 350.0,
-                                    child: TextFormField(
-                                      controller:
-                                          _model.confirmPasswordController,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.password],
-                                      obscureText:
-                                          !_model.confirmPasswordVisibility,
-                                      decoration: InputDecoration(
-                                        labelText: 'Confirm Password',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color: Color(0xFF57636C),
-                                              fontSize: 16.0,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFDBE2E7),
-                                            width: 0.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 0.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 0.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 0.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: Color(0xFFCBCDDD),
-                                        contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                24.0, 24.0, 20.0, 24.0),
-                                        suffixIcon: InkWell(
-                                          onTap: () => setState(
-                                            () => _model
-                                                    .confirmPasswordVisibility =
-                                                !_model
-                                                    .confirmPasswordVisibility,
-                                          ),
-                                          focusNode:
-                                              FocusNode(skipTraversal: true),
-                                          child: Icon(
-                                            _model.confirmPasswordVisibility
-                                                ? Icons.visibility_outlined
-                                                : Icons.visibility_off_outlined,
-                                            color: Color(0xFF57636C),
-                                            size: 24.0,
-                                          ),
-                                        ),
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Readex Pro',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                      validator: _model
-                                          .confirmPasswordControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                              ),
+                              // Align(
+                              //   alignment: AlignmentDirectional(0.00, 1.00),
+                              //   child: Padding(
+                              //     padding: EdgeInsetsDirectional.fromSTEB(
+                              //         0.0, 0.0, 0.0, 9.0),
+                              //     child: Container(
+                              //       width: 350.0,
+                              //       child: TextFormField(
+                              //         controller:
+                              //             _model.confirmPasswordController,
+                              //         autofocus: true,
+                              //         autofillHints: [AutofillHints.password],
+                              //         obscureText:
+                              //             !_model.confirmPasswordVisibility,
+                              //         decoration: InputDecoration(
+                              //           labelText: 'Confirm Password',
+                              //           labelStyle: FlutterFlowTheme.of(context)
+                              //               .labelLarge
+                              //               .override(
+                              //                 fontFamily: 'Plus Jakarta Sans',
+                              //                 color: Color(0xFF57636C),
+                              //                 fontSize: 16.0,
+                              //                 fontWeight: FontWeight.normal,
+                              //               ),
+                              //           enabledBorder: OutlineInputBorder(
+                              //             borderSide: BorderSide(
+                              //               color: Color(0xFFDBE2E7),
+                              //               width: 0.0,
+                              //             ),
+                              //             borderRadius:
+                              //                 BorderRadius.circular(12.0),
+                              //           ),
+                              //           focusedBorder: OutlineInputBorder(
+                              //             borderSide: BorderSide(
+                              //               color: Colors.transparent,
+                              //               width: 0.0,
+                              //             ),
+                              //             borderRadius:
+                              //                 BorderRadius.circular(12.0),
+                              //           ),
+                              //           errorBorder: OutlineInputBorder(
+                              //             borderSide: BorderSide(
+                              //               color: Colors.transparent,
+                              //               width: 0.0,
+                              //             ),
+                              //             borderRadius:
+                              //                 BorderRadius.circular(12.0),
+                              //           ),
+                              //           focusedErrorBorder: OutlineInputBorder(
+                              //             borderSide: BorderSide(
+                              //               color: Colors.transparent,
+                              //               width: 0.0,
+                              //             ),
+                              //             borderRadius:
+                              //                 BorderRadius.circular(12.0),
+                              //           ),
+                              //           filled: true,
+                              //           fillColor: Color(0xFFCBCDDD),
+                              //           contentPadding:
+                              //               EdgeInsetsDirectional.fromSTEB(
+                              //                   24.0, 24.0, 20.0, 24.0),
+                              //           suffixIcon: InkWell(
+                              //             onTap: () => setState(
+                              //               () => _model
+                              //                       .confirmPasswordVisibility =
+                              //                   !_model
+                              //                       .confirmPasswordVisibility,
+                              //             ),
+                              //             focusNode:
+                              //                 FocusNode(skipTraversal: true),
+                              //             child: Icon(
+                              //               _model.confirmPasswordVisibility
+                              //                   ? Icons.visibility_outlined
+                              //                   : Icons.visibility_off_outlined,
+                              //               color: Color(0xFF57636C),
+                              //               size: 24.0,
+                              //             ),
+                              //           ),
+                              //         ),
+                              //         style: FlutterFlowTheme.of(context)
+                              //             .bodyMedium
+                              //             .override(
+                              //               fontFamily: 'Readex Pro',
+                              //               color: FlutterFlowTheme.of(context)
+                              //                   .secondaryBackground,
+                              //               fontSize: 16.0,
+                              //               fontWeight: FontWeight.w500,
+                              //             ),
+                              //         validator: _model
+                              //             .confirmPasswordControllerValidator
+                              //             .asValidator(context),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
                               Align(
                                 alignment: AlignmentDirectional(0.00, 1.00),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 19.0, 0.0, 16.0),
                                   child: FFButtonWidget(
+                                    // onPressed: registerUser,
+
                                     onPressed: () async {
-                                      context.pushNamed('home');
+                                      final response = await http.post(
+                                        Uri.parse(
+                                            'http://localhost:8080/api/usuarioapi/registerApi'),
+                                        headers: {
+                                          'Content-Type': 'application/json',
+                                        },
+                                        body: jsonEncode({
+                                          'email': _model
+                                              .emailAddressController.text,
+                                          'senha':
+                                              _model.passwordController.text,
+                                        }),
+                                      );
+
+                                      // Linhas de depuração:
+                                      print(
+                                          'Status da resposta: ${response.statusCode}');
+                                      print(
+                                          'Corpo da resposta: ${response.body}');
+
+                                      if (response.statusCode == 201) {
+                                        // Usuário registrado com sucesso, navegar para a próxima tela
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content:
+                                                Text('Registro  bem-sucedido!'),
+                                          ),
+                                        );
+
+                                        //aguardar um momento para que o usuario veja a mensagem de sucesso
+                                        await Future.delayed(Duration(
+                                            seconds:
+                                                2)); //aguarde 2 segundos ou o tempo desejado
+                                        Navigator.of(context)
+                                            .pushNamed('login2Copy');
+                                      } else if (response.statusCode == 200) {
+                                        //o codigo 200 pode ser tratado separadamente, se necessário.
+                                        //Faça o que for apropriado para o código 200.
+                                      } else {
+                                        // Mostrar erro ao usuário
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                              content:
+                                                  Text('Erro ao registrar')),
+                                        );
+                                      }
                                     },
-                                    text: 'Iniciar',
+
+                                    text: 'Criar',
                                     options: FFButtonOptions(
                                       width: 270.0,
                                       height: 50.0,

@@ -8,6 +8,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'telainicial_model.dart';
+import 'telainicial_widget.dart';
 export 'telainicial_model.dart';
 
 class TelainicialWidget extends StatefulWidget {

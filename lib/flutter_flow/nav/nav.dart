@@ -3,14 +3,16 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
+// import 'package:seus_cachoss/create2/create_sql.dart';
 
 import '../../auth/base_auth_user_provider.dart';
 
+import '../../pages/login2_copy/telainicial/telainicial_model.dart';
 import '/index.dart';
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
+// import '/flutter_flow/flutter_flow_theme.dart';
+// import '/flutter_flow/lat_lng.dart';
+// import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'serialization_util.dart';
 
@@ -100,6 +102,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/recuperarsenha',
           builder: (context, params) => RecuperarsenhaWidget(),
         ),
+        //  FFRoute(
+        //   name: 'createsql',
+        //   path: '/createsql',
+        //   // builder: (context, params) => LoginSql(),
+        // ),
         FFRoute(
           name: 'login2Copy',
           path: '/login2Copy',
